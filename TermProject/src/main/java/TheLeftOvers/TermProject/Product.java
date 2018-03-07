@@ -1,4 +1,7 @@
+package TheLeftOvers.TermProject;
+
 import java.util.Set;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
