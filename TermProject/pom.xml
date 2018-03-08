@@ -4,53 +4,74 @@
   <artifactId>TermProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-      <parent>
+  <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.0.RELEASE</version>
-    </parent>
+  </parent>
+  
+  <servlet>
+        <servlet-name>springmvcforms</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+     
+    <servlet-mapping>
+        <servlet-name>springmvcforms</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
   <dependencies>
          <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-  	<dependency>
+        
+  	    <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+        
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>RELEASE</version>
         </dependency>
+        
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.7.2</version>
         </dependency>
+        
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>javax.persistence</artifactId>
             <version>2.1.0</version>
         </dependency>
+        
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.jpa</artifactId>
@@ -58,10 +79,12 @@
         </dependency>
 
     </dependencies>
+    
     <properties>
         <java.version>1.8</java.version>
     </properties>
-       <build>
+    
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -70,7 +93,7 @@
         </plugins>
     </build>
     
-        <pluginRepositories>
+    <pluginRepositories>
         <pluginRepository>
             <id>spring-releases</id>
             <name>Spring Releases</name>
@@ -78,7 +101,7 @@
         </pluginRepository>
     </pluginRepositories>
     
-        <repositories>
+    <repositories>
         <repository>
             <id>spring-releases</id>
             <name>Spring Releases</name>
