@@ -4,4 +4,4 @@ jdk:
 deploy:
  provider: heroku
  api-key:
-  secure: $HEROKU_API_KEY
+  secure: 44UG7-BNj65r42y3nepbvg
