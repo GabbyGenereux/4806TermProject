@@ -77,7 +77,7 @@ public class Product {
 	}
 	
 	public double averageRating(){
-		double sum, counter = 0;
+		double sum = 0, counter = 0;
 		for (Review r : reviews){
 			sum+=r.getRating();
 			counter++;
