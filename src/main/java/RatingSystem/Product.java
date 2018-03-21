@@ -20,11 +20,21 @@ public class Product {
 	@OneToMany
 	private Set<Review> reviews;
 	
+	private Product() {};
+	
+	public Product(String url, String name, String description, UserAccount creator) {
+		this();
+		this.setUrl(url);
+		this.setName(name);
+		this.setDescription(description);
+		this.setCreator(creator);
+	}
 
 	public long getProductID() {
 		return productID;
 	}
 
+	@SuppressWarnings("unused")
 	private void setProductID(long productID) {
 		this.productID = productID;
 	}
@@ -78,6 +88,9 @@ public class Product {
 	
 	public double averageRating(){
 		double sum = 0, counter = 0;
+		if(reviews == null) {
+			return 0;
+		}
 		for (Review r : reviews){
 			sum+=r.getRating();
 			counter++;
