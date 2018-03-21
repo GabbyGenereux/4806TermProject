@@ -21,6 +21,12 @@ public class UserAccount {
 	@ManyToMany
 	private Set<UserAccount> followedUsers;
 	
+	public UserAccount() {}
+	
+	public UserAccount(String username)
+	{
+		this.username = username;
+	}
 	
 	public long getUserID() {
 		return userID;
@@ -75,6 +81,12 @@ public class UserAccount {
 	
 	public void follow(UserAccount usr) {
 		this.getFollowedUsers().add(usr);
+	}
+	
+	@Override
+	public String toString()
+	{
+		return String.format("User[userID=%d, username=%s]", userID, username);
 	}
 	
 	@Override
