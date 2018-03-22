@@ -21,7 +21,7 @@ public class Product {
 	@OneToMany
 	private Set<Review> reviews = new HashSet<Review>();
 	
-	private Product() {};
+	public Product() {};
 	
 	public Product(String url, String name, String description, UserAccount creator) {
 		this();
