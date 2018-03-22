@@ -12,7 +12,8 @@ public class productController {
 	//Gets the information on the product
     @GetMapping("/product")
     public String productForm(Model model) {
-        model.addAttribute("product", new Product());
+    	Product p = new Product("google.com", "Google", "A search engine", new UserAccount("Person"));
+        model.addAttribute("product", p);
         return "product";
     }
 

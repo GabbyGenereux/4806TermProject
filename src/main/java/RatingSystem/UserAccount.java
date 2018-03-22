@@ -21,11 +21,13 @@ public class UserAccount {
 	@ManyToMany
 	private Set<UserAccount> followedUsers;
 	
-	public UserAccount() {}
+	private UserAccount() {
+		this.setDescription("No description has been provided");
+	}
 	
-	public UserAccount(String username)
-	{
-		this.username = username;
+	public UserAccount(String userName) {
+		this();
+		this.setUsername(userName);
 	}
 	
 	public long getUserID() {
@@ -71,10 +73,7 @@ public class UserAccount {
 	}
 	
 	public Product postProduct(String URL, String name, String description) {
-		Product p = new Product();
-		p.setUrl(URL);
-		p.setName(name);
-		p.setDescription(description);
+		Product p = new Product(URL, name, description, this);
 		this.getPostedProducts().add(p);
 		return p;
 	}

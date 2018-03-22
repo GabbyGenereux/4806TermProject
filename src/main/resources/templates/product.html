@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<?php 
-		$product_id = $_GET['id'];
-		$query = "SELECT * FROM sample WHERE 'Id' = '$product_id' LIMIT 1";
-		$result = mysql_query($query);
-		
-		while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-    		$product = $row['name'];
-		} 
-	?>
     <title>INSERT PRODUCT NAME</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="reset.css">
@@ -51,9 +42,11 @@
 	 		<th style="width:60%">Comment</th>
 		</tr>
 		<tr>
+    <!--
 			<td th:text="'' + ${product.review.creator}" />
 			<td th:text="'' + ${product.review.rating}" />
 			<td th:text="'' + ${product.review.comment}" />
+      -->
 		</tr>
 	</table>
 </body>
