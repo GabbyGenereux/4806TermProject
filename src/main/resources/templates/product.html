@@ -14,6 +14,7 @@
 			</td>
 			<td style="float:left;border:hidden;">
 				<h1 th:text="'' + ${product.name}" />
+				<h2 th:text="'' + ${product.creator.getUsername()}" />
 				<div id="left" class="left">
 					<h2>Rating:</h2>
 				</div>
@@ -39,6 +40,13 @@
 			<th align="middle" style="width:20%">User</th>
 			<th align="middle" style="width:20%">Star Rating</th>
 	 		<th style="width:60%">Comment</th>
+		</tr>
+		<tr>
+    <!--
+			<td th:text="'' + ${product.review.creator}" />
+			<td th:text="'' + ${product.review.rating}" />
+			<td th:text="'' + ${product.review.comment}" />
+      -->
 		</tr>
 	</table>
 </body>

@@ -1,5 +1,6 @@
 package RatingSystem;
 
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -18,7 +19,7 @@ public class Product {
 	private String description;
 	private UserAccount creator;
 	@OneToMany
-	private Set<Review> reviews;
+	private Set<Review> reviews = new HashSet<Review>();
 	
 	private Product() {};
 	
